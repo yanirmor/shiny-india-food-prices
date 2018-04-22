@@ -3,5 +3,7 @@
 .RData
 .DS_Store
 
-R/tests.R
 R/draft.R
+R/db_connection.R
+
+SQL/create_contact_table.sql
