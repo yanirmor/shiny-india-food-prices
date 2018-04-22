@@ -1,0 +1,200 @@
+/* font */
+@import url("//fonts.googleapis.com/css?family=Spectral");
+
+
+
+/* general */
+body, label, a {
+  font-family: 'Spectral', serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #000000;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+hr {
+  border-top-color: #B7BFBF;
+}
+
+a:hover {
+  color: #2B2960;
+  text-decoration: none;
+}
+
+a:focus {
+  color: #000000;
+  text-decoration: none;
+}
+
+
+
+/* header */
+#header {
+  background-color: #EAEEEE;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+}
+
+
+
+/* sidebar */
+#sidebar {
+  background-color: #EAEEEE;
+  border: none;
+  box-shadow: none;
+  border-radius: 15px;
+  padding-top: 75px;
+}
+
+
+
+/* navigation bar */
+.nav-tabs {
+	border: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #000000;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-radius: 15px;
+  background-color: #EAEEEE;
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:hover {
+  background: #EAEEEE;
+  border-radius: 15px;
+  margin-right: 75px;
+  border: 0;
+}
+
+
+
+/* select input */
+.selectize-input, .selectize-dropdown, .selectize-dropdown-content .active {
+  color: #000000;
+  font-size: 17px;
+}
+
+
+
+/* map */
+.legend, .legend svg text {
+    color: #000000; 
+    font-family: 'Spectral', serif;
+}
+
+.info {
+  background-color: #D4DADC;
+    background-color: rgba(212, 218, 220, 0.4);
+    box-shadow: none;
+}
+
+.leaflet-popup-content {
+    text-align: center;
+    font-family: 'Spectral', serif;
+    font-size: 15px;
+}
+
+
+
+/* slider input */
+#years_control {
+  background-color: #D4DADC;
+  background-color: rgba(212, 218, 220, 0.4);
+  box-shadow: none;
+  margin-bottom: -15px;
+  margin-left: 0;
+  padding: 15px 15px 0px 15px;
+}
+
+.irs-min, .irs-max {
+  visibility: hidden !important;
+}
+
+.irs-from, .irs-to, .irs-single {
+  color: #000000;
+  font-family: 'Spectral', serif;
+  background-color: #B5C2C2;
+  background-color: rgba(181, 194, 194, 0.75);
+  font-size: 12px;
+  font-weight: 600;
+  top: -5px;
+}
+
+.irs-bar {
+  background-color: #555555;
+  border: 0;
+}
+
+.irs-line, .irs-line-right, .irs-line-mid, .irs-line-left {
+  background-color: #F9FFFF;
+  border: 0;
+  opacity: 0.9;
+}
+
+.irs-slider {
+  background-color: #B5C2C2;
+  border: 0;
+  box-shadow: none;
+}
+
+.irs-slider.active, .irs-slider:hover {
+  background-color: #9CA9A9;
+  border: 0;
+  box-shadow: none;
+}
+
+
+
+/* button */
+.btn, .btn:focus {
+  background-color: #EAEEEE;
+  font-size: 17px;
+  color: #000000;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: #D2DADA;
+  color: #000000;
+}
+
+.btn:active:focus {
+  color: #000000;
+  outline: none;
+}
+
+
+
+/* table */
+.datatables {
+  font-size: 14px;
+}
+
+
+
+/* modal links */
+#about_modal_dialog a:hover, #licenses_modal_dialog a:hover {
+  color: #2B2960;
+  text-decoration: none;
+}
+
+#about_modal_dialog a, #about_modal_dialog a:focus, 
+#licenses_modal_dialog a, #licenses_modal_dialog a:focus {
+  color: #000000;
+  text-decoration: underline;
+}
