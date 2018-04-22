@@ -1,0 +1,21 @@
+<b>Me</b>
+<br>
+My name is Yanir and I'm a data analyst and R & Shiny developer. 
+This app is part of my public portfolio, and its code is available in my 
+<a href = "https://github.com/yanirmor" target = "_blank">GitHub account</a> 
+(you're welcome to fork or star the repository).
+<br><br>
+
+<b>The App</b>
+<br>
+The app demonstrates analysis and visualization of food prices in India, 
+using data collected by the World Food Programme. 
+Three different types of analysis were applied in order to shed some light on the data.
+<br><br>
+
+<b>Methods</b>
+<br>
+Most of the app was naturally written in R, and is utilizing packages such as dplyr, ggplot2, leaflet and more. 
+Additionally you can find some code written in HTML, SQL, CSS and JavaScript. 
+Finally, as in every data analysis project, some data cleaning, data manipulation and statistical tests were applied.
+<br>
