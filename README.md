@@ -1,7 +1,11 @@
 # India Food Prices
 Analysis and visualization of India food prices data collected by the World Food Programme
 <a href = "https://yanirmor.shinyapps.io/india-food-prices">
-https://yanirmor.shinyapps.io/india-food-prices</a>
+https://yanirmor.shinyapps.io/india-food-prices</a>  
+
+<img align = "left" height = 30 src = "https://github.com/yanirmor/india-food-prices/blob/master/www/india.png">
+<img align = "left" height = 30 src = "https://github.com/yanirmor/india-food-prices/blob/master/www/grain.png">  
+<br><br>
 
 ### About
 The app demonstrates analysis and visualization of food prices in India,  
