@@ -1,0 +1,9 @@
+<u>Geo Analysis</u>
+<br>
+Comparison of food prices between states in India. 
+Each Circle represents a single state (click them to see which).
+<br><br>
+Both the color and the size of a circle represent the price of the selected commodity. 
+The duplication is intentional, and meant to help distuinguish and grasp the geographical trend more easily.
+<br><br>
+As one might expect, blocs of states within different geographical areas tend to have somewhat correlated prices.
