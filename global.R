@@ -7,7 +7,7 @@ library(sp)
 library(rgeos)
 library(leaflet)
 library(DBI)
-library(RMySQL)
+library(RPostgres)
 
 # scripts -----------------------------------------------------------------
 source("R/functions.R")

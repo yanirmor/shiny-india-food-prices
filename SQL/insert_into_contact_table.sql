@@ -1,2 +1,2 @@
-INSERT INTO india_food_prices_contact (name, email, subject, message)
-  VALUES (?name, ?email, ?subject, ?message);
+INSERT INTO shiny_contact (app, name, email, subject, message)
+  VALUES ('india_food_prices', ?name, ?email, ?subject, ?message);
