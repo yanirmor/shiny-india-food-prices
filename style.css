@@ -1,0 +1,506 @@
+/* general */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #000000;
+    margin: 0;
+    padding: 0 0 50px 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.second-color {
+    color: #25414b;
+}
+
+.third-color {
+    color: #fcf854;
+}
+
+.highlighted {
+    font-size: 24px;
+}
+
+.green {
+    color: #2cb824;
+}
+ 
+ .red {
+    color: #e3362d;
+}   
+
+/* header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5aa3bb;
+    color: #ffffff;
+    padding: 15px;
+}
+
+header #header_title {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+header #header_title img {
+    height: 50px;
+}
+
+header #header_buttons img {
+    height: 40px;
+    margin-left: 20px;
+    padding: 1px;
+    border-radius: 50px;
+}
+
+header #header_buttons img:hover {
+    background-color: #fcf854;
+    cursor: pointer;
+}
+
+header #header_buttons img:active {
+    background-color: #498497;
+}
+
+header a:hover,
+header a:focus {
+    text-decoration: none;
+}
+
+/* contact form */
+
+#my_email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #498497;
+    margin-bottom: 15px;
+}
+
+#my_email img {
+    height: 30px;
+    margin-right: 5px;
+}
+
+#my_email a,
+#my_email a:hover,
+#my_email a:focus {
+    color: #498497;
+    text-decoration: none;
+}
+
+/* wrapper */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 50px;
+}
+
+.wrapper .content-title {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* inputs */
+
+.form-group {
+    width: 200px;
+}
+
+.form-control {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 15px;
+    border-radius: 0;
+    box-shadow: none;
+    color: #000000;
+}
+
+.form-control:focus {
+    outline: 1px auto #25414b;
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn,
+.btn:focus {
+    padding: 10px 15px;
+    background-color: #5aa3bb;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    border-radius: 0;
+    margin-top: 15px;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #498497;
+    color: #fcf854;
+}
+
+.btn:active,
+.btn:active:focus {
+    background-color: #25414b;
+    color: #fcf854;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.caution-button,
+.caution-button:focus {
+    background-color: #e3362d;
+}
+
+.caution-button:hover {
+    background-color: #c13028;
+}
+
+.caution-button:active,
+.caution-button:active:focus {
+    background-color: #25414b;
+    color: #fcf854;
+    border-radius: 0;
+    outline: none;
+}
+
+.selectize-input, 
+.selectize-dropdown {
+    border-radius: 0 !important;
+    border: 1px solid #5aa3bb;
+}
+
+.selectize-input.focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.irs-min, .irs-max {
+    display: none;
+}
+
+.irs-from, 
+.irs-to, 
+.irs-single {
+    font-size: 13px;
+    top: -5px;
+    background: #25414b;
+}
+
+.irs-line {
+    border-radius: 0;
+    background: #e0dede;
+    border: none;
+    margin: 0 1px;
+}
+
+.irs-bar {
+    background: #5aa3bb;
+    border: none;
+}
+
+.irs-slider {
+    background: #25414b;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+}
+
+.irs-slider:hover {
+    background: #25414b;
+}
+
+/* modals */
+
+#shiny_modal {
+    padding: 0;
+}
+
+.modal-dialog {
+    width: fit-content;
+}
+
+.modal-header {
+    border-bottom: 1px solid #25414b;
+}
+
+.modal-title {
+    font-size: 19px;
+    font-weight: 700;    
+}
+
+.modal-title > span {
+    display: flex;
+    align-items: center;
+}
+
+.modal-title img {
+    height: 30px;
+    margin-right: 5px;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-footer {
+    border: 0;
+}
+
+/* progress bar */
+
+#shiny-notification-panel {
+    width: fit-content;
+    margin: 15px;
+}
+
+.shiny-notification {
+    border-radius: 0;
+    color: #000000;
+    padding: 8px 16px;
+}
+
+.progress-bar {
+    background-color: #5aa3bb;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.shiny-notification-close {
+    display: none;
+}
+
+/* hr separator */
+
+.hr-separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    width: 100%;
+    display: none;
+}
+
+.hr-separator .hr-line {
+    background-color: #25414b;
+    height: 1.5px;
+    width: 100%;
+}
+
+.hr-separator img {
+    height: 50px;
+    padding: 0 10px;
+}
+
+/* filters */
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#filters > .form-group {    
+    margin: 0 15px;    
+    width: 250px;
+}
+
+#intro_button {
+    height: 34px;
+    padding: 5px 15px;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* tabset */
+
+.tabbable {
+    margin-top: 15px;
+}
+
+.nav-tabs {
+    border-bottom-color: #25414b;
+    border-width: 1.5px;
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    margin: auto;
+}
+
+.nav-tabs li {
+    margin-bottom: -1.5px;
+}
+
+.nav-tabs li:not(:last-child) {
+    margin-right: 8px;
+}
+
+.nav-tabs li a,
+.nav-tabs li a:focus {
+    font-size: 19px;
+    font-weight: 700;
+    color: #5aa3bb;
+    border-radius: 0;
+    border-width: 1.5px;
+    background-color: inherit;
+    outline: none;
+}
+
+.nav-tabs li.active a,
+.nav-tabs li.active a:hover,
+.nav-tabs li.active a:focus {
+    color: #000000;
+    border-color: #25414b;
+    border-bottom-color: transparent;
+    border-width: 1.5px;
+}
+
+.nav-tabs li:not(.active) a:hover {
+    border-color: transparent;
+    background-color: inherit;
+    color: #25414b;
+}
+
+.tab-pane {
+    padding: 15px;
+}
+
+.tab-pane[data-value="Geo Analysis"] .form-group {
+    margin: 15px auto;
+    text-align: center;
+}
+
+#bars_plot, 
+#box_plot {
+    margin: 15px auto 0 auto;
+}
+
+#tukey_table {
+    width: fit-content;
+    margin: 30px auto 0 auto;
+}
+
+#tukey_table > table {
+    font-size: 15px;
+}
+
+/* footer */
+
+footer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #5aa3bb;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer .third-color {
+    font-weight: 600;
+}
+
+footer #licenses {
+    font-size: calc(100% - 1px);
+    position: relative;
+}
+
+footer #licenses > span {
+    font-weight: 500;
+}
+
+footer #licenses > div {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: max-content;
+    padding: 8px;
+    color: #000000;
+    background-color: rgba(224, 222, 222, 0.75);
+    font-size: calc(100% - 1px);
+}
+
+/* leaflet */
+
+#map_plot .legend {
+    display: flex;
+    flex-wrap: wrap;
+    width: min-content;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+    color: #000000;
+    min-width: 70px;
+}
+
+#map_plot .legend > div:first-child {
+    width: max-content;
+    text-align: center;
+    min-width: 35px;
+}
+
+#map_plot .legend svg text {
+    fill: unset;
+}
+
+#map_plot .legend svg line {
+    stroke: #000000;
+}
+
+.leaflet-popup-content {
+    text-align: center;
+    color: #000000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+}
+
+.leaflet-popup-title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.leaflet-popup-sub-title {
+    text-decoration: underline;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.leaflet-control,
+.leaflet-popup-content-wrapper {
+    border-radius: 0;
+    font-family: "Open Sans", sans-serif;
+}

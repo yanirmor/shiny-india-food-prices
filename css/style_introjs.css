@@ -1,0 +1,76 @@
+/* buttons */
+
+.introjs-button,
+.introjs-button:focus {
+    background-color: #5aa3bb;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+
+    /* additional adjustments */
+    border: none !important;
+    border-radius: 0 !important;
+    text-shadow: none;
+    background: #5aa3bb;
+    padding: 6px 12px;
+    margin: 20px 5px 0 5px;
+    background-image: none;
+    text-decoration: none;
+}
+
+.introjs-button:hover {
+    background-color: #498497;
+    color: #fcf854;
+
+    /* additional adjustments */
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.introjs-button:active,
+.introjs-button:active:focus {
+    background-color: #25414b;
+    color: #fcf854;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    /* additional adjustments */
+    background-image: none;
+    text-decoration: none;
+}
+
+.introjs-skipbutton:not(.introjs-donebutton),
+.introjs-prevbutton {
+    display: none;
+}
+
+/* general */
+
+.introjs-overlay {
+    background: none;
+    background-color: #787878;
+}
+
+.introjs-tooltip {
+    font-size: 14px;
+    max-width: 500px;
+    border-radius: 0;
+}
+
+.introjs-helperNumberLayer {
+    background: none;
+    background-color: #5aa3bb;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.introjs-helperLayer {
+    border-radius: 0;
+}

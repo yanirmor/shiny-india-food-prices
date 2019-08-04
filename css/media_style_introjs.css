@@ -1,0 +1,8 @@
+@media (max-width: 992px) {
+    .introjs-tooltip { max-width: 375px; }
+}
+
+@media (max-width: 576px) {
+    .introjs-button, .introjs-button:focus { font-size: 13px; padding: 5px 10px; margin: 15px 3px 0 3px; }
+    .introjs-tooltip { font-size: 13px; max-width: 250px; }
+}

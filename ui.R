@@ -1,107 +1,182 @@
-fluidPage(
-  # page setup --------------------------------------------------------------
-  title = "India Food Prices",
-  includeCSS("www/style.css"),
-  includeScript("www/script.js"),
-
-  # header ------------------------------------------------------------------
-  fluidRow(column(12, div(
-    id = "header", 
-    h1("India Food Prices"), 
-    fluidRow(
-      img(src = "india.png", height = 30),
-      img(src = "grain.png", height = 30)
+basicPage(
+  # page set up -----
+  tags$head(
+    tags$meta(charset = "UTF-8"),
+    
+    tags$meta(
+      name = "keywords",
+      content = "R Shiny, Shiny, India Food Prices, Food Prices Analysis, World Food Programme, Yanir Mor"
     ),
-    h5("Created by Yanir Mor © 2018")
-  ))),
+    
+    tags$meta(
+      name = "description",
+      content = "Statistical & geo-spatial analysis and visualization of food prices in India, using base R, ggplot2 and leaflet. The data was collected by the World Food Programme."
+    ),
+    
+    tags$link(href = "icons/food.png", rel = "icon"),
+    tags$link(href = "icons/food.png", rel = "apple-touch-icon"),
+    tags$link(
+      rel = "stylesheet", 
+      href = "https://fonts.googleapis.com/css?family=Open+Sans"
+    ),
+    tags$title("India Food Prices")
+  ),
   
-  fluidRow(
-    # sidebar -----------------------------------------------------------------
-    column(width = 3, wellPanel(
-      id = "sidebar",
+  includeCSS(path = "style.css"),
+  includeCSS(path = "media_style.css"),
+  includeScript(path = "script.js"),
+  
+  introjsUI(),
+  includeCSS(path = "css/style_introjs.css"),
+  includeCSS(path = "css/media_style_introjs.css"),
+  
+  # header -----
+  tags$header(
+    div(
+      id = "header_title", 
       
-      h2("Welcome!"),
-      fluidRow(column(width = 10, offset = 1, selectInput(
+      img(src = "icons/food.png"), 
+      "India", span("Food", class = "third-color"), "Prices"
+    ),
+    
+    div(
+      id = "header_buttons",
+      
+      a(
+        href = "https://www.yanirmor.com", 
+        target = "_blank", 
+        img(src = "icons/website.png"),
+        title = "My Website"
+      ),
+      
+      actionLink(
+        inputId = "contact_button", 
+        label = img(src = "icons/email.png"),
+        title = "Contact"
+      ),
+      
+      a(
+        href = "https://github.com/yanirmor/shiny-india-food-prices", 
+        target = "_blank", 
+        img(src = "icons/github.png"),
+        title = "Source Code"
+      )
+    )
+  ),
+  
+  # body -----
+  div(
+    class = "wrapper",
+    
+    # filters -----
+    introBox(
+      data.step = 1,
+      data.intro = paste(
+        "This app demonstrates statistical and geo-spatial analysis of food prices in India, in R.<br><br>",
+        "It is based on data collected by the World Food Programme.",
+        "The results of the analysis are visualized using leaflet and ggplot2."
+      ),
+      
+      id = "filters",
+      
+      actionButton(inputId = "intro_button", label = "?"),
+      
+      selectInput(
         inputId = "commodity",
-        label = "Please select a commodity to analyze",
-        width = "100%",
-        choices = unique(df$commodity),
+        label = NULL,
+        choices = sort(unique(price_df$commodity)),
         selected = "Wheat"
-      ))),
+      ),
       
-      br(), br(), br(), br(), 
-      
-      fluidRow(column(12, actionLink(
-        inputId = "about",
-        label = tagList(icon("question-circle"), "About")
-      ))),
-      hr(),
-      fluidRow(column(12, actionLink(
-        inputId = "contact", 
-        label = tagList(icon("envelope"), "Contact / Hire Me")
-      ))),
-      hr(),
-      fluidRow(column(12, a(
-        icon("github"), "Get Code",
-        href = "https://github.com/yanirmor/india-food-prices",
-        target = "_blank"
-      ))),
-      hr(),
-      fluidRow(column(12, actionLink(
-        inputId = "licenses",
-        label = tagList(icon("file-text"), "Licenses")
-      )))
-    )),
-
-    # tabs --------------------------------------------------------------------
-    column(width = 9, tabsetPanel(
+      # hr separator -----
+      div(
+        class = "hr-separator",
+        div(class = "hr-line"),
+        img(src = "icons/food.png"),
+        div(class = "hr-line")
+      )
+    ),
+    
+    # tabset -----
+    tabsetPanel(
+      id = "tabset",
       
       tabPanel(
-        title = tagList(icon("globe"), "Geo Analysis"), 
-        hr(),
-        fluidRow(
-          column(width = 9, leafletOutput("map_plot", height = 650)),
-          column(
-            width = 3, 
-            align = "left", 
-            HTML(paste(readLines("text/map_text.txt"), collapse = ""))
+        title = "Geo Analysis",
+        
+        introBox(
+          data.step = 2,
+          data.intro = paste(
+            "Comparison of food prices between states in India.<br><br>",
+            "The color and the size of a circle represent the price of the selected commodity.",
+            "Blocs of states within different geographical areas tend to have somewhat correlated prices."
           ),
-          br()
+          
+          sliderInput(
+            inputId = "years", 
+            label = NULL, 
+            min = 2010, 
+            max = 2017, 
+            step = 1, 
+            value = c(2010, 2017), 
+            sep = "",
+            ticks = F
+          ),
+          
+          leafletOutput(outputId = "map_plot")
         )
       ),
       
       tabPanel(
-        title = tagList(icon("line-chart"), "Time Series Analysis"), 
-        hr(),
-        fluidRow(
-          column(width = 9, plotOutput("bars_line_plot")),
-          column(
-            width = 3, 
-            align = "left", 
-            HTML(paste(readLines("text/bars_line_text.txt"), collapse = ""))
+        title = "Time Series Analysis",
+        
+        introBox(
+          data.step = 3,
+          data.intro = paste(
+            "Price trends visualized as standard scores (Z) over time.<br><br>",
+            "The distance between a tip of a bar and a point in a line can tell how faster (or slower)",
+            "the price of the selected commodity changes relative to the prices of all commodities."
           ),
-          br()
+          
+          plotOutput(outputId = "bars_plot")
         )
       ),
       
       tabPanel(
-        title = tagList(icon("umbrella"), "Seasonal Analysis"), 
-        hr(),
-        fluidRow(
-          column(
-            width = 9, 
-            plotOutput("box_plot", height = 350),
-            h4(strong("Tukey's HSD test"), align = "left"),
-            DT::dataTableOutput("tukey_table", height = 250)
+        title = "Seasonal Analysis",
+        
+        introBox(
+          data.step = 4,
+          data.intro = paste(
+            "Statistical analysis of seasonal trends.",
+            "Seasons were mapped to Winter (Jan-Mar), Summer (Apr-Jun), Monsoon (Jul-Sep) and Autumn (Oct-Dec).<br><br>",
+            "ANOVA and Tukey's HSD tests are used to determine if the differences are significant (P-value < 0.05)."
           ),
-          column(
-            width = 3, 
-            align = "left", 
-            HTML(paste(readLines("text/boxplot_text.txt"), collapse = ""))
-          ),
-          br()
+          
+          plotOutput(outputId = "box_plot"),
+          tableOutput(outputId = "tukey_table")
         )
       )
-    ))
+    )
+  ),
+  
+  # footer -----
+  tags$footer(
+    div(
+      id = "footer_copyright",
+      "2019", 
+      span(class = "third-color", "Yanir Mor"), 
+      HTML("&copy;"), 
+      "All Rights Reserved",
+      span(
+        id = "licenses",
+        span(class = "third-color", "(Licenses)"),
+        div(
+          tags$li("Prices data by the WFP and HDX (CC BY 3.0 IGO)"),
+          tags$li("Geo data by the DIVA-GIS project"),
+          tags$li("Icon by PINPOINT.WORLD / Iconfinder")
+        )
+      )
+    )
   )
 )

@@ -1,31 +1,31 @@
-# packages ----------------------------------------------------------------
-library(shiny)
-library(dplyr)
-library(stringr)
-library(ggplot2)
-library(sp)
-library(rgeos)
-library(leaflet)
-library(DBI)
-library(RPostgres)
+# environment -----
+rm(list = ls())
+invisible(gc())
+options(encoding = "UTF-8", scipen = 999, stringsAsFactors = F, max.print = 80)
+if (interactive()) options(shiny.autoreload = T)
 
-# scripts -----------------------------------------------------------------
-source("R/functions.R")
-source("R/modals.R")
+# packages -----
+suppressPackageStartupMessages({
+  library(shiny)
+  library(dplyr)
+  library(tibble)
+  library(scales)
+  library(ggplot2)
+  library(leaflet)
+  library(RPostgres)
+  library(DBI)
+  library(extrafont)
+  library(rintrojs)
+})
 
-# prices data -------------------------------------------------------------
-# source: http://vam.wfp.org/sites/data/WFPVAM_FoodPrices_05-12-2017.csv
-# prices_data <- data.table::fread("data/WFPVAM_FoodPrices_05-12-2017.csv")
-# prices_data <- prices_data %>% filter(adm0_name == "India", mp_year >= 2010)
-# saveRDS(object = prices_data, file = "data/prices_data.RDS")
-df <- readRDS(file = "data/prices_data.RDS") %>% clean_prices_data()
+# scripts -----
+source(file = "functions.R")
+source(file = "R/get_price_data.R")
+source(file = "R/get_geo_data.R")
 
-# geo_data ----------------------------------------------------------------
-# source: http://biogeo.ucdavis.edu/data/diva/adm/IND_adm.zip
-# geo_data <- rgdal::readOGR(dsn = "data/IND_adm", layer = "IND_adm1")
-# geo_data <- rmapshaper::ms_simplify(input = geo_data)
-# saveRDS(object = geo_data, file = "data/geo_data.RDS")
-sp_df <- readRDS(file = "data/geo_data.RDS") %>% clean_geo_data()
+# static data -----
+if (file.exists("data/price_df.RDS") == F) get_price_data()
+if (file.exists("data/geo_sp_df.RDS") == F) get_geo_data()
 
-# options -----------------------------------------------------------------
-options(scipen = 10)
+price_df <- readRDS(file = "data/price_df.RDS")
+geo_sp_df <- readRDS(file = "data/geo_sp_df.RDS")
