@@ -26,7 +26,6 @@
 
     /* additional adjustments */
     -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
 }
 
@@ -36,8 +35,8 @@
     color: #fcf854;
     border-radius: 0;
     outline: none;
+    
     -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
 
     /* additional adjustments */
