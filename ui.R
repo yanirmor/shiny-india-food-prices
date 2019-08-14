@@ -19,7 +19,9 @@ basicPage(
       rel = "stylesheet", 
       href = "https://fonts.googleapis.com/css?family=Open+Sans"
     ),
-    tags$title("India Food Prices")
+    tags$title("India Food Prices"),
+    
+    includeScript(path = "js/matomo_script.js")
   ),
   
   includeCSS(path = "style.css"),
@@ -177,6 +179,12 @@ basicPage(
           tags$li("Icon by PINPOINT.WORLD / Iconfinder")
         )
       )
+    ),
+    
+    div(
+      id = "privacy_notice",
+      span("This website uses cookies to improve your experience"),
+      actionButton(inputId = "privacy_notice_agree", label = "OK")
     )
   )
 )
