@@ -12,6 +12,11 @@ function(input, output, session) {
   # intro -----
   observeEvent(input$intro_button, {
     
+    session$sendCustomMessage(
+      type = "matomoEvent", 
+      message = c("IntroJS", "Click", "Click")
+    )
+    
     intro_tabset_func <- I(
       "
       if (this._currentStep == 1) { 
@@ -42,7 +47,5 @@ function(input, output, session) {
       events = list(onchange = intro_tabset_func)
     )
   })
-  
-  # contact form -----
-  source(file = "R/contact_form_server.R", local = T)$value
+
 }

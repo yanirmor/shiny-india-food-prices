@@ -49,12 +49,6 @@ basicPage(
         title = "My Website"
       ),
       
-      actionLink(
-        inputId = "contact_button", 
-        label = img(src = "icons/email.png"),
-        title = "Contact"
-      ),
-      
       a(
         href = "https://github.com/yanirmor/shiny-india-food-prices", 
         target = "_blank", 
