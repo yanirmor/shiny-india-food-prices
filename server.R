@@ -12,11 +12,6 @@ function(input, output, session) {
   # intro -----
   observeEvent(input$intro_button, {
     
-    session$sendCustomMessage(
-      type = "matomoEvent", 
-      message = c("IntroJS", "Click", "Click")
-    )
-    
     intro_tabset_func <- I(
       "
       if (this._currentStep == 1) { 

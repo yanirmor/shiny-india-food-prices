@@ -12,14 +12,11 @@ suppressPackageStartupMessages({
   library(scales)
   library(ggplot2)
   library(leaflet)
-  library(RPostgres)
-  library(DBI)
   library(extrafont)
   library(rintrojs)
 })
 
 # scripts -----
-source(file = "functions.R")
 source(file = "R/get_price_data.R")
 source(file = "R/get_geo_data.R")
 
