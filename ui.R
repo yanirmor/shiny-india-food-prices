@@ -19,9 +19,7 @@ basicPage(
       rel = "stylesheet", 
       href = "https://fonts.googleapis.com/css?family=Open+Sans"
     ),
-    tags$title("India Food Prices"),
-    
-    includeScript(path = "js/matomo_script.js")
+    tags$title("India Food Prices")
   ),
   
   includeCSS(path = "style.css"),
