@@ -27,7 +27,6 @@ ANOVA and Tukey's HSD tests are used to determine if the differences are signifi
 
 ### Author
 Author: Yanir Mor  
-Email: contact@yanirmor.com  
 Website: [https://www.yanirmor.com](https://www.yanirmor.com)
 
 ### Credits
@@ -38,4 +37,4 @@ Website: [https://www.yanirmor.com](https://www.yanirmor.com)
 
 ---
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
-Copyright © 2019 Yanir Mor
+Copyright © Yanir Mor

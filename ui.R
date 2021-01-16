@@ -51,12 +51,6 @@ basicPage(
         title = "My Website"
       ),
       
-      actionLink(
-        inputId = "contact_button", 
-        label = img(src = "icons/email.png"),
-        title = "Contact"
-      ),
-      
       a(
         href = "https://github.com/yanirmor/shiny-india-food-prices", 
         target = "_blank", 
@@ -179,12 +173,6 @@ basicPage(
           tags$li("Icon by PINPOINT.WORLD / Iconfinder")
         )
       )
-    ),
-    
-    div(
-      id = "privacy_notice",
-      span("This website uses cookies to improve your experience"),
-      actionButton(inputId = "privacy_notice_agree", label = "OK")
     )
   )
 )
