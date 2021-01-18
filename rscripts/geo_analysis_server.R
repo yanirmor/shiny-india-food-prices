@@ -24,13 +24,13 @@ map_sp_df <- reactive({
 # base map -----
 
 output$map_plot <- renderLeaflet({
-    
+
   leaflet(data = geo_sp_df) %>%
-    
+
     addProviderTiles(providers$CartoDB.PositronNoLabels) %>%
-    
+
     setView(lat = 22.5, lng = 82, zoom = 4) %>%
-    
+
     addEasyButton(
       easyButton(
         icon = icon(name = "home"),
@@ -40,7 +40,7 @@ output$map_plot <- renderLeaflet({
         )
       )
     ) %>%
-    
+
     addPolygons(
       fill = F,
       color = "#000000",
@@ -48,7 +48,7 @@ output$map_plot <- renderLeaflet({
       opacity = 0.25,
       smoothFactor = 1
     )
-    
+
 })
 
 # map layers -----

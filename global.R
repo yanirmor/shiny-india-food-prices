@@ -17,8 +17,8 @@ suppressPackageStartupMessages({
 })
 
 # scripts -----
-source(file = "R/get_price_data.R")
-source(file = "R/get_geo_data.R")
+source(file = "rscripts/get_price_data.R")
+source(file = "rscripts/get_geo_data.R")
 
 # static data -----
 if (file.exists("data/price_df.RDS") == F) get_price_data()

@@ -1,13 +1,13 @@
 function(input, output, session) {
-
+  
   # geo analysis -----
-  source(file = "R/geo_analysis_server.R", local = T)$value
+  source(file = "rscripts/geo_analysis_server.R", local = T)$value
 
   # time series analysis -----
-  source(file = "R/time_series_analysis_server.R", local = T)$value
-  
+  source(file = "rscripts/time_series_analysis_server.R", local = T)$value
+
   # seasonal analysis -----
-  source(file = "R/seasonal_analysis_server.R", local = T)$value
+  source(file = "rscripts/seasonal_analysis_server.R", local = T)$value
     
   # intro -----
   observeEvent(input$intro_button, {
